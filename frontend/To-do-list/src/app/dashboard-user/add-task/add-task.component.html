@@ -1,0 +1,58 @@
+<form class="mt-4 me-5 ms-5" [formGroup]="formtask">
+  <!-- 2 column grid layout with text inputs for the first and last names -->
+  <div class="form-check d-flex justify-content-center">
+    <h3>Add Task</h3>
+  </div>
+  <div class="mb-4">
+    <label class="form-label"> Add Description</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Task Description..."
+      formControlName="description"
+    />
+  </div>
+
+  <div class="row">
+    <!-- Email input -->
+    <div class="col-5 me-4">
+      <div class="mb-4">
+        <label class="form-label" for="form3Example3">Status</label>
+        <select class="form-select" aria-label="Default select example">
+          <option selected value="Still in Progress">Still in Progress</option>
+        </select>
+      </div>
+    </div>
+    <!-- Password input -->
+    <div class="col-5 ms-4">
+      <div class="mb-4">
+        <label class="form-label" for="form3Example3">Creation_Date</label>
+        <input
+          type="date"
+          id="start"
+          class="form-control"
+          name="trip-start"
+          min="{{ formattedDate }}"
+          max="{{ formattedDate }}"
+          formControlName="date"
+        />
+      </div>
+    </div>
+  </div>
+  <!-- Checkbox -->
+  <div class="form-check d-flex justify-content-center mt-4 mb-2">
+    <button class="btn btn-danger me-4" (click)="closeDialog()">Cancel</button>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="formtask.invalid"
+      (click)="addtask()"
+    >
+      Add Task
+    </button>
+  </div>
+
+  <!-- Submit button -->
+
+  <!-- Register buttons -->
+</form>

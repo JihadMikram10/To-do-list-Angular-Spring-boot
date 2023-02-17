@@ -1,0 +1,154 @@
+<section class="gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block mt-3">
+              <img
+                src="https://media.istockphoto.com/id/935062576/vector/clipboard-with-checklist-icon-checklist-complete-tasks-to-do-list-survey-exam-concepts-best.jpg?s=612x612&w=0&k=20&c=qPlo4e75iCkYiRsRBMcLdegZUoIvAzFUCsWWF-EIZnE="
+                alt="login form"
+                class="img-fluid mt-5"
+                style="border-radius: 1rem 0 0 1rem"
+              />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+                <form [formGroup]="formUser">
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i
+                      class="fas fa-cubes fa-2x me-3"
+                      style="color: #5536e2"
+                    ></i>
+                    <span class="h1 fw-bold mb-0">To Do</span>
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">
+                    Sign into your account
+                  </h5>
+
+                  <div class="form-outline mb-4">
+                    <input
+                      type="text"
+                      id="form2Example07"
+                      formControlName="username"
+                      class="form-control form-control-lg"
+                    />
+                    <label class="form-label" for="form2Example07"
+                      >UserName</label
+                    >
+                    <span
+                      class="text-danger"
+                      *ngIf="
+                        formUser.controls['username'].hasError('required') &&
+                        formUser.controls['username'].touched
+                      "
+                    >
+                      UserName required
+                    </span>
+                    <span
+                      class="text-danger"
+                      *ngIf="
+                        formUser.controls['username'].touched &&
+                        formUser.controls['username'].hasError('minlength')
+                      "
+                    >
+                      UserName should contains 6 characters
+                    </span>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input
+                      type="email"
+                      id="form2Example17"
+                      formControlName="email"
+                      class="form-control form-control-lg"
+                    />
+                    <label class="form-label" for="form2Example17"
+                      >Email
+                    </label>
+                    <span
+                      class="text-danger"
+                      *ngIf="
+                        formUser.controls['email'].invalid &&
+                        formUser.controls['email'].touched &&
+                        formUser.controls['email'].value
+                      "
+                    >
+                      Invalid Email
+                    </span>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input
+                      type="password"
+                      id="form2Example27"
+                      formControlName="password"
+                      class="form-control form-control-lg"
+                    />
+                    <label class="form-label" for="form2Example27"
+                      >Password</label
+                    >
+                    <span
+                      class="text-danger"
+                      *ngIf="
+                        formUser.controls['password'].touched &&
+                        formUser.controls['password'].hasError('minlength')
+                      "
+                    >
+                      Password should contains 6 characters
+                    </span>
+                    <span
+                      class="text-danger"
+                      *ngIf="
+                        formUser.controls['password'].value &&
+                        formUser.controls['password'].hasError('pattern')
+                      "
+                    >
+                      Password should Start with UpperCaseLetter
+                    </span>
+                  </div>
+
+                  <div class="pt-1 mb-4">
+                    <button
+                      class="btn btn-primary btn-lg btn-block"
+                      type="button"
+                      [disabled]="formUser.invalid"
+                      (click)="addUser()"
+                    >
+                      Sign Up
+                    </button>
+                  </div>
+                  <p class="text-center text-muted mt-3 mb-2">
+                    Have already an account?
+                    <a routerLink="/connexion" class="fw-bold text-body"
+                      ><u>Login here</u></a
+                    >
+                  </p>
+                  <div class="row p-instruction-register">
+                    <div class="col">
+                      <p class="text-start mt-1 fs-6">
+                        Password must include -
+                      </p>
+                      <p class="text-start">At least 6 characters</p>
+
+                      <p class="text-start">
+                        A mix of upper-case and lower-case characters
+                      </p>
+                      <p class="text-start mt-1">
+                        0 special character e.g - !&*
+                      </p>
+                    </div>
+                    <div class="col">
+                      <p class="text-center fs-6">UserName must include -</p>
+                      <p class="text-center">At least 6 characters</p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
